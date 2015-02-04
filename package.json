@@ -1,0 +1,31 @@
+{
+  "name": "html-stemmer",
+  "version": "1.0.0",
+  "description": "Extracts all stemmed words from an HTML file, with the goal of aiding web-based NLP",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marcelpuyat/html-stemmer"
+  },
+  "keywords": [
+    "nlp",
+    "stemmer",
+    "html",
+    "html-stemmer",
+    "stop-words",
+    "stem"
+  ],
+  "author": "Marcel Puyat <marcelp@stanford.edu> (https://github.com/marcelpuyat)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marcelpuyat/html-stemmer/issues"
+  },
+  "homepage": "https://github.com/marcelpuyat/html-stemmer",
+  "dependencies": {
+    "stemmer": "^0.1.4",
+    "stopwords": "0.0.4"
+  }
+}
