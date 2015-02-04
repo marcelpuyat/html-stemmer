@@ -1,7 +1,7 @@
 {
   "name": "html-stemmer",
   "version": "1.0.0",
-  "description": "Extracts all [porter] stemmed words from an HTML file, with the goal of aiding web-based NLP",
+  "description": "Extracts all [porter2] stemmed words from an HTML file, with the goal of aiding web-based NLP",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
