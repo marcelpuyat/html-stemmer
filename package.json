@@ -1,6 +1,6 @@
 {
   "name": "html-stemmer",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "Extracts all [porter2] stemmed words from an HTML file, with the goal of aiding web-based NLP",
   "main": "index.js",
   "scripts": {
