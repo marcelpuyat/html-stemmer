@@ -1,6 +1,6 @@
 # html-stemmer #
 
-Main repo: https://github.com/marcelpuyat/html-stemmer
+Main repo: [https://github.com/marcelpuyat/html-stemmer](https://github.com/marcelpuyat/html-stemmer)
 
 ## Overview ##
 
