@@ -1,7 +1,7 @@
 {
   "name": "html-stemmer",
   "version": "1.0.0",
-  "description": "Extracts all stemmed words from an HTML file, with the goal of aiding web-based NLP",
+  "description": "Extracts all [porter] stemmed words from an HTML file, with the goal of aiding web-based NLP",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/marcelpuyat/html-stemmer",
   "dependencies": {
+    "fs": "0.0.2",
     "stemmer": "^0.1.4",
     "stopwords": "0.0.4"
   }
