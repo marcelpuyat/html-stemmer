@@ -38,7 +38,7 @@ htmlStemmer.intialize({
 __Options:__
 
 *Note that all of these are optional*
-* `includeTags` - true or false. Filters out html tags (i.e. '<body>' is deleted) when false. false by default
+* `includeTags` - true or false. Filters out html tags (i.e. '\<body\>' is deleted) when false. false by default
 * `filters` - An object that maps regular expressions to what they should be replaced by.
 	```
 	// Example that filters '&apos;' into an apostrophe and '&quot;' into a quotation mark
