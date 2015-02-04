@@ -3,6 +3,7 @@
 			stopWords = require('stopwords').english,
 			fs = require('fs'),
 			stopWordsHash = {},
+			delimiter = /\s+/g,
 			shouldStem = true,
 			regexFilters = [],
 			defaultTagRegex = new RegExp('(<([^>]+)>)', 'ig'),
@@ -27,12 +28,7 @@
 
 				for (var regexString in filters) {
 					if (filters.hasOwnProperty(regexString)) {
-						// Detect if property is indeed a regex string
-						match = regexString.match(new RegExp('^/(.*?)/([gimy]*)$'));
-						if (match === null || match === undefined) {
-							continue;
-						}
-						regex = new RegExp(match[1], match[2]);
+						regex = convertStringToRegExp(regexString, "Filters must be regular expressions");
 						newRegexFilter = {regex: regex, replacement: filters[regexString]};
 						regexFilters.push(newRegexFilter);
 					}
@@ -47,8 +43,20 @@
 				shouldStem = false;
 			}
 
+			if (typeof options.delimiter !== 'undefined') {
+				delimiter = convertStringToRegExp(options.delimiter, "Delimiter must be a regular expression");
+			}
+
 			initializeStopWordsHash();
 		}
+	}
+
+	function convertStringToRegExp(str, errorString) {
+		var match = str.match(new RegExp('^/(.*?)/([gimy]*)$'));
+		if (match === null || match === undefined) {
+			throw errorString;
+		}
+		return new RegExp(match[1], match[2]);
 	}
 
 	function initializeStopWordsHash() {
@@ -57,16 +65,20 @@
 		}
 	}
 
-	function getStemmedWords(filePath) {
+	function getStemmedWords(filePath, callback) {
 		fs.readFile(filePath, function(err, data) {
 			if (err) throw err;
 
 			var filteredData = filterDataString(data.toString());
+			callback(filteredData.split(delimiter).filter(function(word) {
+				return word.length > 0;
+			}));
 		});
 	}
 
 	function filterDataString(dataString) {
 		var regexFilter;
+
 		for (var i = 0; i < regexFilters.length; i++) {
 			regexFilter = regexFilters[i];
 			dataString = dataString.replace(regexFilter.regex, regexFilter.replacement);
