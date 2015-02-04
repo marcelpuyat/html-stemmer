@@ -69,7 +69,6 @@
 		var regexFilter;
 		for (var i = 0; i < regexFilters.length; i++) {
 			regexFilter = regexFilters[i];
-			console.log(regexFilter.regex);
 			dataString = dataString.replace(regexFilter.regex, regexFilter.replacement);
 		}
 
