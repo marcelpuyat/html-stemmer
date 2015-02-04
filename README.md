@@ -27,18 +27,18 @@ Extracts all words from a file, filtering out HTML tags, stemming using Porter2 
 Initializes the stemmer, using default options when not specified.
 
 __Example:__
-	<pre>
-	htmlStemmer.intialize({
-	  includeTags: true,
-	  caseSensitive: true,
-	  delimiter: /[^A-Za-Z0-9]+/gi
-	});
-	</pre>
+<pre>
+htmlStemmer.intialize({
+  includeTags: true,
+  caseSensitive: true,
+  delimiter: /[^A-Za-Z0-9]+/gi
+});
+</pre>
 	
 __Options:__
 
 *Note that all of these are optional*
-* `includeTags` - `true` or `false`. Filters out html tags (i.e. '<body>' is deleted) when `false`. `false` by default
+* `includeTags` - true or false. Filters out html tags (i.e. '<body>' is deleted) when false. false by default
 * `filters` - An object that maps regular expressions to what they should be replaced by.
 	```
 	// Example that filters '&apos;' into an apostrophe and '&quot;' into a quotation mark
@@ -51,7 +51,7 @@ __Options:__
 	  filters: filters
 	});
 	```
-* `stopWords` - `true` or `false`. Excludes stop words (i.e. 'for', 'to', etc.) from final array returned by getStemmedWords if `true`. List of stop words used is available [here](https://github.com/huned/node-stopwords/blob/master/english.js)`true` by default.
-* `caseSensitive` - `true` or `false`. `false` by default.
-* `stemmed` - `true` or `false`. Stems each word using [Porter2](https://www.npmjs.com/package/stem-porter) when true. `true` by default.
+* `stopWords` - true or false. Excludes stop words (i.e. 'for', 'to', etc.) from final array returned by getStemmedWords if true. List of stop words used is available [here](https://github.com/huned/node-stopwords/blob/master/english.js). true by default.
+* `caseSensitive` - true or false. false by default.
+* `stemmed` - true or false. Stems each word using [Porter2](https://www.npmjs.com/package/stem-porter) when true. true by default.
 * `delimiter` - A RegExp delimiter that is used to split the data into tokens. By default, /[^A-Za-z]+/gi is used.
