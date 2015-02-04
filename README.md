@@ -31,12 +31,14 @@ __Options:__
 *Note that all of these are optional*
 * `includeTags` - `true` or `false`. Filters out html tags (i.e. '<body>' is deleted) when `false`. `false` by default
 * `filters` - An object that maps regular expressions to what they should be replaced by.
+
 	// Example that filters '&apos;' into an apostrophe
 	filters = {};
 
 	filters[/&apos;/gi] = '\'';
-	
+
 	htmlStemmer.initialize({
 		filters: filters
 	});
+	
 * `stopWords` - `true` or `false`. Excludes stop words (i.e. 'for', 'to', etc.) from final array returned by getStemmedWords if `true`. `true` by default.
