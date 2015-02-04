@@ -52,6 +52,17 @@ __Options:__
 	});
 	```
 * `stopWords` - true or false. Excludes stop words (i.e. 'for', 'to', etc.) from final array returned by getStemmedWords if true. List of stop words used is available [here](https://github.com/huned/node-stopwords/blob/master/english.js). true by default.
-* `caseSensitive` - true or false. false by default.
+* `caseSensitive` - true or false. Converts all characters to lowercase when false. false by default.
 * `stemmed` - true or false. Stems each word using [Porter2](https://www.npmjs.com/package/stem-porter) when true. true by default.
 * `delimiter` - A RegExp delimiter that is used to split the data into tokens. By default, /[^A-Za-z]+/gi is used.
+
+### getStemmedWords(filePath, callbackFn)
+
+Returns an array containing all stemmed words according to the options specified in `initialize`. Because file reading is done asynchronously, a callback function is required to get the array of stemmed words.
+
+__Example:__
+<pre>
+htmlStemmer.getStemmedWords('filename', function(stemmedWordsArray) {
+  console.log(stemmedWordsArray); // Prints out all stemmed words in 'filename'
+});
+</pre>
