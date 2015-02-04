@@ -26,7 +26,7 @@
   "homepage": "https://github.com/marcelpuyat/html-stemmer",
   "dependencies": {
     "fs": "0.0.2",
-    "stemmer": "^0.1.4",
+    "stem-porter": "0.0.1",
     "stopwords": "0.0.4"
   }
 }

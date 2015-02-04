@@ -1,11 +1,28 @@
-var htmlStemmer = require('../index.js');
+// Example of how to write all stemmed words to a new file
 
+var htmlStemmer = require('../index.js'),
+		fs = require('fs');
+
+// Sadly, using regular expressions as keys in Javascript doesn't work when
+// declaring literal objects. Filters must be regular expressions, and must be
+// added using bracket notation.
+// Note that filters are optional, and by default only html tags are filtered out.
 filters = {};
-filters[/&#x[0-9]+;/gi] = ' ';
-filters[/-&\w+;/gi] = ' ';
+
+// Used to filter out escaped symbols, i.e. &apos, into empty strings.
+filters[/&\w+;/gi] = '';
+
 htmlStemmer.initialize({
-	filters: filters,
-	delimiter: '/[^A-Za-z]+/g'
+	filters: filters
+
+	// Several other options possible (read docs)
 });
 
-htmlStemmer.getStemmedWords('examples/example_data.txt', console.log);
+// getStemmedWords takes a filename, and a callback which will be passed
+// an array of all stemmed words. In this case, we simply write out each
+// of the words to a file (with a newline for readability)
+htmlStemmer.getStemmedWords('raw_example_data.txt', function(stemmedWords) {
+	stemmedWords.forEach(function(word) {
+		fs.appendFileSync('stemmed_example_data.txt', word + '\n');
+	});
+});
