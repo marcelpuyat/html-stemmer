@@ -1,6 +1,6 @@
 {
   "name": "html-stemmer",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "Extracts all [porter2] stemmed words from an HTML file, with the goal of aiding web-based NLP",
   "main": "index.js",
   "scripts": {
@@ -16,7 +16,12 @@
     "html",
     "html-stemmer",
     "stop-words",
-    "stem"
+    "stem",
+    "porter",
+    "porter2",
+    "stopwords",
+    "unescaper",
+    "unescape"
   ],
   "author": "Marcel Puyat <marcelp@stanford.edu> (https://github.com/marcelpuyat)",
   "license": "ISC",
