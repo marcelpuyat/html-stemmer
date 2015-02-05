@@ -28,7 +28,7 @@ Initializes the stemmer, using default options when not specified.
 
 __Example:__
 <pre>
-htmlStemmer.intialize({
+htmlStemmer.initialize({
   includeTags: true,
   caseSensitive: true,
   delimiter: /[^A-Za-Z0-9]+/gi
